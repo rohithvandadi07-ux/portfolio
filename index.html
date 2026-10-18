@@ -205,7 +205,18 @@ h2.h{font-size:clamp(34px,6vw,84px);line-height:1;font-weight:800;letter-spacing
 .grow .nm{font-size:13px;color:#c9cde0;padding-right:14px;line-height:1.3}
 .bar{height:28px;border-radius:99px;transform-origin:0 50%;display:flex;align-items:center;padding:0 14px;font-size:11px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,.35)}
 .bar.ai{background:linear-gradient(90deg,#6a4df0,#8f7bff)}.bar.sc{background:linear-gradient(90deg,#c0392b,#ff5f6d)}
-.leg{display:flex;gap:18px;margin-top:16px;font-size:12px;color:var(--muted)}.leg i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px}
+.sub{margin:46px 0 -14px;font-size:12px;letter-spacing:.2em;color:var(--t);text-transform:uppercase}
+.axis.p{grid-template-columns:210px 31fr 28fr 31fr 30fr 31fr 30fr 31fr 31fr 30fr 31fr}
+.grow.p{grid-template-columns:210px 1fr}
+.grow .nm small{display:block;margin-top:3px;font-size:10.5px;letter-spacing:.08em;color:var(--muted);font-family:var(--mono,ui-monospace,monospace)}
+.grow.lk .nm{cursor:pointer}.grow.lk:hover .nm{color:#fff}
+.trk{position:relative;height:28px}
+.trk .bar{position:absolute;top:0;min-width:14px;padding:0}
+.trk .bar.in{padding:0 14px}
+.bar.rb{background:linear-gradient(90deg,#c27a14,#ffb347);color:#1a1204}
+.trk .bl{position:absolute;top:0;line-height:28px;font-size:11px;font-weight:600;color:#b9bed2;white-space:nowrap}
+@media(max-width:700px){#gin2.gin{min-width:0}#gin2 .axis.p{grid-template-columns:104px 31fr 28fr 31fr 30fr 31fr 30fr 31fr 31fr 30fr 31fr;font-size:8px;letter-spacing:0}#gin2 .grow.p{grid-template-columns:104px 1fr}#gin2 .nm{font-size:11.5px;padding-right:8px}#gin2 .nm small{font-size:9px}#gin2 .bl{font-size:9.5px}#gin2 .bar.in{padding:0 8px;font-size:9.5px}}
+.leg{display:flex;flex-wrap:wrap;gap:18px;margin-top:16px;font-size:12px;color:var(--muted)}.leg i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px}
 /* terminal */
 #term{padding:8vh 0 16vh}
 .win{margin-top:30px;max-width:900px;border-radius:16px;border:1px solid #2a3050;background:rgba(7,9,15,.92);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
@@ -375,10 +386,13 @@ input{cursor:text}
 </div></section>
 
 <section id="tl"><div class="wrap">
-  <div class="eyebrow mono">Research timeline</div>
+  <div class="eyebrow mono">Timeline</div>
   <h2 class="h">Always building.</h2>
+  <div class="sub mono">Research &middot; from my resume</div>
   <div class="gantt"><div class="gin" id="gin"></div></div>
-  <div class="leg"><span><i style="background:#8f7bff"></i>AI / ML</span><span><i style="background:#ff5f6d"></i>Security</span><span class="mono">From my resume</span></div>
+  <div class="sub mono">Projects &middot; repo created to last commit on GitHub (2026)</div>
+  <div class="gantt"><div class="gin" id="gin2"></div></div>
+  <div class="leg"><span><i style="background:#8f7bff"></i>AI / ML</span><span><i style="background:#ff5f6d"></i>Security</span><span><i style="background:#ffb347"></i>Robotics</span><span class="mono">Dots are single-day uploads. Click a project name for details.</span></div>
 </div></section>
 
 
@@ -773,8 +787,20 @@ function run(){
   const MO=['JUN','JUL','AUG','SEP','OCT','NOV','DEC','JAN','FEB','MAR'];
   const TL=[['Bayesian neural network (fSGMCMC)',0,5,'ai','Uncertainty'],['UAV task offloading (GA + MAPPO)',1,4,'ai','Reinforcement learning'],['Malicious URL detection',1,4,'sc','DistilBERT · CNN · LightGBM'],['Movie sentiment analysis',1,4,'ai','NLP'],['Denoising autoencoder',5,9,'ai','FashionMNIST'],['ZDADE zero-day detection',5,9,'sc','eBPF + LSTM'],['Deep unrolled MRI denoising',7,9,'ai','ADMM']];
   $('#gin').innerHTML='<div class="axis mono"><span></span>'+MO.map(m=>'<span>'+m+'</span>').join('')+'</div>'+TL.map(r=>'<div class="grow"><div class="nm">'+r[0]+'</div><div class="bar '+r[3]+'" style="grid-column:'+(r[1]+2)+'/'+(r[2]+3)+'">'+r[4]+'</div></div>').join('');
-  gsap.from('.bar',{scaleX:0,duration:1.1,stagger:.12,ease:'expo.out',scrollTrigger:{trigger:'#gin',start:'top 82%'}});
-  gsap.from('.grow .nm',{x:-20,opacity:0,stagger:.08,duration:.7,ease:'power3.out',scrollTrigger:{trigger:'#gin',start:'top 82%'}});
+  gsap.from('#gin .bar',{scaleX:0,duration:1.1,stagger:.12,ease:'expo.out',scrollTrigger:{trigger:'#gin',start:'top 82%'}});
+  gsap.from('#gin .nm',{x:-20,opacity:0,stagger:.08,duration:.7,ease:'power3.out',scrollTrigger:{trigger:'#gin',start:'top 82%'}});
+  const MO2=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT'],T0=Date.UTC(2026,0,1),SPAN=304;
+  const PR2=[['ros2_object_scanner','ROS 2 object scanner','rb','2026-01-23','2026-01-23','ROS 2 Jazzy sim','m',2],['Detectra','Detectra','sc','2026-04-30','2026-06-15','ROS 2 security','p',3],['ai-resume-analyzer','AI Resume Analyzer','ai','2026-05-03','2026-05-03','Resume analyzer','p',5],['accident-detection','Accident Detection','ai','2026-05-03','2026-05-03','YOLOv8','p',4],['image-caption-generator','Image caption generator','ai','2026-05-03','2026-05-03','BLIP','m',3],['disease-prediction','Disease prediction','ai','2026-05-03','2026-05-03','Random Forest','m',4],['ai-chatbot','AI chatbot','ai','2026-05-03','2026-05-03','Groq + LLaMA 3','m',0],['ai-phishing-detection-system','AI Phishing Detection','sc','2026-05-06','2026-09-30','DistilBERT + LightGBM','p',1],['vendorguard','VendorGuard','sc','2026-05-16','2026-05-27','Vendor risk','p',2],['ecotrace-ai','EcoTrace AI','ai','2026-06-11','2026-06-11','Gemini advisor','m',1],['patient-aware-cyber-resilience','Patient-Aware Cyber Resilience','sc','2026-10-05','2026-10-17','Research prototype','p',0]];
+  const dy=s=>(Date.parse(s+'T00:00:00Z')-T0)/864e5,fm=s=>new Date(s+'T00:00:00Z').toLocaleDateString('en',{month:'short',day:'numeric',timeZone:'UTC'});
+  $('#gin2').innerHTML='<div class="axis p mono"><span></span>'+MO2.map(m=>'<span>'+m+'</span>').join('')+'</div>'+PR2.map((r,i)=>{
+    const l=dy(r[3])/SPAN*100,w=Math.max((dy(r[4])-dy(r[3])+1)/SPAN*100,.9),long=w>13,left=l>68;
+    const lab=long?r[5]:'';const out=long?'':'<span class="bl" style="'+(left?'right:calc('+(100-l)+'% + 8px)':'left:calc('+(l+w)+'% + 8px)')+'">'+r[5]+'</span>';
+    const d=r[3]===r[4]?fm(r[3]):fm(r[3])+' - '+fm(r[4]);
+    return '<div class="grow p lk" data-i="'+i+'"><div class="nm">'+r[1]+'<small>'+d+'</small></div><div class="trk"><div class="bar '+r[2]+(long?' in':'')+'" style="left:'+l+'%;width:'+w+'%">'+lab+'</div>'+out+'</div></div>'}).join('');
+  $('#gin2').addEventListener('click',e=>{const row=e.target.closest('.grow.lk');if(!row)return;const r=PR2[+row.dataset.i];if(r[6]==='p')openMod(r[7]);else window.open(GH+r[0],'_blank','noopener')});
+  gsap.from('#gin2 .bar',{scaleX:0,duration:1,stagger:.08,ease:'expo.out',scrollTrigger:{trigger:'#gin2',start:'top 85%'}});
+  gsap.from('#gin2 .bl',{opacity:0,duration:.6,delay:.5,stagger:.08,scrollTrigger:{trigger:'#gin2',start:'top 85%'}});
+  gsap.from('#gin2 .nm',{x:-20,opacity:0,stagger:.06,duration:.7,ease:'power3.out',scrollTrigger:{trigger:'#gin2',start:'top 85%'}});
   gsap.from('#tl .h',{y:80,opacity:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:'#tl .h',start:'top 88%'}});
 
   // terminal
