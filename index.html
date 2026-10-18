@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rohith V - AI and Cybersecurity Engineer</title>
+<meta name="description" content="Rohith V is a B.Tech student building at the intersection of AI and cybersecurity. Projects, research and TrishulX, a multi-layer cyber defense platform.">
+<meta property="og:title" content="Rohith V - AI and Cybersecurity Engineer">
+<meta property="og:description" content="AI, cybersecurity and full-stack projects, plus TrishulX, a multi-layer cyber defense platform in development.">
+<meta name="theme-color" content="#06070b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2306070b'/%3E%3Ctext x='32' y='43' font-family='Arial Black,Arial' font-size='30' font-weight='900' text-anchor='middle' fill='%238f7bff'%3ERV%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#06070b;--text:#eceef6;--muted:#8d93a8;--accent:#8f7bff;--teal:#38d2c0;--amber:#ffb347;--line:#1f2436;--card:#10131c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+.nav{position:fixed;left:0;right:0;top:0;z-index:50;display:flex;align-items:center;gap:18px;padding:12px 22px;font-size:13px;background:linear-gradient(to bottom,rgba(6,7,11,.85),rgba(6,7,11,0))}
+.nav b{font-size:16px;margin-right:auto;letter-spacing:.04em}
+.nav a{color:#b8bdd0}.nav a:hover{color:#fff}
+.nav .skip{border:1px solid #3a4160;padding:6px 12px;border-radius:99px;color:#fff;background:rgba(10,12,20,.6)}
+@media(max-width:700px){.nav a.l{display:none}}
+.sec{position:relative}
+.stk{position:sticky;top:0;height:100vh;overflow:hidden}
+.abs{position:absolute;inset:0}
+.grain{position:absolute;inset:0;width:100%;height:100%;opacity:.13;mix-blend-mode:screen;pointer-events:none;z-index:8}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.7));z-index:7;pointer-events:none}
+.lb{position:absolute;left:0;right:0;background:#000;z-index:9;height:0}.lb.t{top:0}.lb.b{bottom:0}
+.hint{position:absolute;bottom:2.2%;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.3em;color:#c9c4b0;z-index:10;text-transform:uppercase;transition:opacity .3s}
+/* hero */
+#hero{position:absolute;inset:0;z-index:2;background:radial-gradient(circle at 50% 60%,#1b1840,#06070b 70%)}
+#hname{position:absolute;left:0;right:0;top:14%;text-align:center;font-weight:900;font-size:clamp(54px,17vw,300px);letter-spacing:-.04em;line-height:.9;white-space:nowrap;background:linear-gradient(180deg,#fff 20%,#6d5df0);-webkit-background-clip:text;background-clip:text;color:transparent;will-change:transform}
+#hsil{position:absolute;left:50%;bottom:-2%;height:80%;aspect-ratio:400/520;margin-left:calc(-40vh*400/520);will-change:transform;filter:drop-shadow(0 0 26px rgba(124,92,255,.45))}
+#hsil svg,#hsil img{width:100%;height:100%}
+#hsub{position:absolute;left:0;right:0;bottom:7%;text-align:center;z-index:3;font-size:clamp(11px,1.5vw,16px);letter-spacing:.28em;text-transform:uppercase;color:#cfd3e6;padding:0 10px}
+.tcard{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:0 7vw;font-family:'Arial Black',Impact,sans-serif;text-transform:uppercase;z-index:5;opacity:0}
+.tcard small{display:block;font-family:Georgia,serif;letter-spacing:.5em;font-size:clamp(11px,1.5vw,15px);color:#c9c4b0;font-weight:400;margin-bottom:10px}
+.tcard h2{margin:0;font-size:clamp(28px,6.4vw,84px);letter-spacing:.03em;line-height:1.04}
+/* devices */
+#devs .stk{background:radial-gradient(circle at 40% 55%,#1b2040,#06070b 70%)}
+.scene3d{position:absolute;inset:0;perspective:1100px}
+.dev{position:absolute;left:38%;top:56%;width:260px;height:170px;margin:-85px 0 0 -130px;transform-style:preserve-3d}
+.pl{position:absolute;inset:0;border-radius:10px;overflow:hidden}
+.lbs{position:absolute;right:4vw;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;width:min(300px,38vw);z-index:6}
+.lbs section{display:none;flex-direction:column;gap:15px}
+.lbs section>div{font-size:14px;border-left:3px solid;padding:4px 0 4px 12px}
+.lbs small{display:block;color:#9aa3b8;font-size:12px;margin-top:2px}
+.lbs em{font-style:normal;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;border-radius:99px;margin-left:8px;background:#2a2f48;color:#cfd3e6;vertical-align:middle}
+.lbs em.dv{background:#5a3a10;color:#ffcf8a}
+.acard{position:absolute;inset:0;display:grid;place-items:center;text-align:center;z-index:5;pointer-events:none;padding:0 6vw}
+.acard small{display:block;font-family:Georgia,serif;letter-spacing:.5em;color:#c9c4b0;font-size:14px;margin-bottom:8px;text-transform:uppercase}
+.acard h2{margin:0;font-family:'Arial Black',Impact,sans-serif;font-size:clamp(34px,8vw,100px);letter-spacing:.04em}
+.acard p{margin:12px auto 0;color:#9aa3b8;font-size:15px;max-width:480px;line-height:1.5}
+#actbar{position:absolute;left:22px;top:60px;z-index:10;font-size:12px;letter-spacing:.25em;color:#c9c4b0;text-transform:uppercase}
+#actdots{position:absolute;left:22px;top:84px;display:flex;gap:6px;z-index:10}
+#actdots i{width:26px;height:3px;background:#2a3050;border-radius:2px}#actdots i.on{background:var(--accent)}
+#cap{position:absolute;left:22px;right:22px;bottom:15%;z-index:10;font-size:12px;color:#8d93a8;max-width:520px}
+@media(max-width:760px){.dev{left:50%;top:42%}.lbs{right:4vw;left:4vw;top:auto;bottom:16%;width:auto}.lbs section{flex-direction:row;flex-wrap:wrap;gap:8px 14px;justify-content:center}.lbs section>div{font-size:11px;padding:2px 0 2px 8px}.lbs small{display:none}#cap{bottom:12%;font-size:11px}}
+/* content */
+.cs{max-width:1060px;margin:0 auto;padding:100px 22px}
+.eyebrow{font-size:12px;letter-spacing:.3em;color:var(--teal);text-transform:uppercase}
+h2.h{font-size:clamp(28px,5vw,52px);margin:8px 0 14px;letter-spacing:-.02em;line-height:1.05}
+.lead{color:var(--muted);font-size:17px;line-height:1.65;max-width:680px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+.btn{display:inline-block;padding:11px 20px;border-radius:99px;font-size:14px;font-weight:600;cursor:pointer;border:1px solid #3a4160;background:transparent;color:var(--text)}
+.btn.p{background:linear-gradient(135deg,#7c5cff,#38d2c0);border:0;color:#fff}
+.tag{font-size:11px;padding:3px 9px;border-radius:99px;background:#1a1f31;color:#aab3d0;white-space:nowrap}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:30px}
+.skills>div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}.skills h4{margin:0 0 10px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal)}.skills .tg{display:flex;flex-wrap:wrap;gap:6px}
+/* projects */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}
+.chip{padding:7px 14px;border-radius:99px;background:var(--card);border:1px solid var(--line);color:var(--muted);font-size:13px;cursor:pointer}.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .2s,border-color .2s,opacity .7s;cursor:pointer;text-align:left;color:inherit;padding:0;display:block;width:100%}
+.pc:hover{transform:translateY(-4px);border-color:#3a4160}
+.pc .th{height:110px;display:flex;align-items:flex-end;padding:12px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.pc .bd{padding:16px}.pc h4{margin:0 0 5px;font-size:17px}.pc p{margin:0 0 12px;color:var(--muted);font-size:13.5px;line-height:1.5}.pc .tg{display:flex;gap:6px;flex-wrap:wrap}
+.pc.hide{display:none}
+.more{margin-top:34px}.more h3{font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 14px}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.mc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:13px;color:var(--muted);line-height:1.5;display:block}.mc:hover{border-color:#3a4160}.mc b{display:block;color:var(--text);font-size:14px;margin-bottom:4px}
+.mc.hide{display:none}
+/* modal */
+#mod{position:fixed;inset:0;z-index:100;background:rgba(3,4,8,.78);display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(4px)}
+#mod.on{display:flex}
+#mod .box{background:#0d1019;border:1px solid #2a3050;border-radius:18px;max-width:640px;width:100%;max-height:88vh;overflow:auto;padding:26px}
+#mod h3{margin:0 0 4px;font-size:24px}#mod .st{color:var(--teal);font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
+#mod h5{margin:16px 0 4px;font-size:12px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}#mod p{margin:0;line-height:1.6;color:#cfd3e6;font-size:15px}
+#mod .x{float:right;background:none;border:0;color:#8d93a8;font-size:26px;cursor:pointer;line-height:1}
+#mod .tg{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+/* trishulx */
+.tx{border-radius:22px;padding:2px;background:linear-gradient(135deg,#ffb347,#8f7bff,#38d2c0)}
+.tx>div{background:#0b0d16;border-radius:20px;padding:34px}
+@media(max-width:760px){.tx>div{padding:20px}}
+.shields{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:24px 0}
+.shields>div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}.shields h4{margin:0 0 6px;font-size:16px}.shields p{margin:0 0 10px;color:var(--muted);font-size:13.5px;line-height:1.5}
+.shields .sd{border-color:#7a5320}.shields .pl2{border-style:dashed}
+.stt{display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:#2a2f48;color:#cfd3e6;margin-bottom:8px}.stt.dv{background:#5a3a10;color:#ffcf8a}
+.road{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin:26px 0;position:relative}
+.road div{padding:14px 14px 0 0;position:relative;font-size:13.5px;color:var(--muted);line-height:1.5}.road div:before{content:"";display:block;height:4px;background:#232838;margin-bottom:14px;border-radius:2px}.road div.on:before{background:linear-gradient(90deg,var(--amber),#ff8a3d)}
+.road b{display:block;color:var(--text);font-size:14px;margin-bottom:3px}
+.looking{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 20px}
+.note{font-size:12px;color:#6b7390;margin-top:14px}
+/* services */
+.sv{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:26px}.sv>div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}.sv h4{margin:0 0 6px;font-size:17px}.sv p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+/* credits */
+#end{background:#000;text-align:center;padding:130px 22px 70px;font-family:Georgia,serif}
+#end .c{margin:0 0 32px;font-size:13px;letter-spacing:.35em;text-transform:uppercase;color:#a9a58f}#end .c b{display:block;font-size:21px;letter-spacing:.12em;color:#fff;margin-top:8px;font-weight:400}
+#end .big{font-family:'Arial Black',Impact,sans-serif;font-size:clamp(30px,6vw,72px);margin:50px 0 24px;color:#fff;letter-spacing:.03em}
+#end .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;font-family:system-ui,sans-serif}
+#end .foot{margin-top:50px;font-size:12px;color:#666d85;font-family:system-ui,sans-serif}
+@media(prefers-reduced-motion:reduce){.rv{transition:none;opacity:1;transform:none}.grain{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav"><b>ROHITH V</b><a class="l" href="#devs">Story</a><a class="l" href="#projects">Projects</a><a class="l" href="#trishulx">TrishulX</a><a class="l" href="#services">Freelance</a><a class="l" href="#contact">Contact</a><a class="skip" href="#about">Skip intro</a></nav>
+
+<section class="sec" id="A" style="height:560vh"><div class="stk">
+  <canvas class="grain"></canvas><div class="vig"></div><div class="lb t" id="lbA1"></div><div class="lb b" id="lbA2"></div>
+  <div id="hero">
+    <div id="hname">ROHITH V</div>
+    <div id="hsil"><svg viewBox="0 0 400 520" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2d3250"/><stop offset="1" stop-color="#0a0c14"/></linearGradient></defs><path d="M200 40C150 40 120 80 120 130C120 175 145 215 175 230C170 250 165 262 120 280C50 305 20 360 10 520H390C380 360 350 305 280 280C235 262 230 250 225 230C255 215 280 175 280 130C280 80 250 40 200 40Z" fill="url(#sg)" stroke="#8f7bff" stroke-opacity=".7" stroke-width="3"/></svg></div>
+    <div id="hsub">AI &middot; Cybersecurity &middot; Full-stack &middot; Building TrishulX</div>
+  </div>
+  <div id="tcA"></div>
+  <div class="hint" id="hintA">Scroll</div>
+</div></section>
+
+<section class="sec" id="devs" style="height:1000vh"><div class="stk">
+  <canvas class="grain"></canvas><div class="vig"></div><div class="lb t" style="height:11%"></div><div class="lb b" style="height:11%"></div>
+  <div id="actbar"></div><div id="actdots"><i></i><i></i><i></i></div>
+  <div class="scene3d" id="sc3"></div>
+  <div class="acard" id="acard"></div>
+  <div class="lbs" id="lbs"></div>
+  <div id="cap"></div>
+</div></section>
+
+<section id="about"><div class="cs">
+  <div class="eyebrow rv">About</div><h2 class="h rv">I build where AI meets security.</h2>
+  <p class="lead rv">I'm a third-year B.Tech student who works across the whole stack of an AI product: I train the models, build the backend that serves them, and design the frontend people actually use. I like problems where a model has to make a decision that matters, and the system around it has to stay safe. Right now I'm researching AI-driven cybersecurity, explainable AI and ROS 2 security, and building TrishulX, my own cyber defense platform.</p>
+  <div class="skills rv" id="skills"></div>
+</div></section>
+
+<section id="projects"><div class="cs" style="padding-top:40px">
+  <div class="eyebrow rv">Work</div><h2 class="h rv">Things I've built.</h2>
+  <p class="lead rv">Click a project for the story. Everything is on GitHub.</p>
+  <div class="chips rv" id="chips"></div><div class="grid" id="pgrid"></div>
+  <div class="more rv"><h3>More projects</h3><div class="mgrid" id="mgrid"></div></div>
+</div></section>
+
+<section id="trishulx"><div class="cs" style="padding-top:40px">
+  <div class="eyebrow rv">Currently building</div><h2 class="h rv">TrishulX</h2>
+  <div class="tx rv"><div>
+    <p class="lead" style="margin-top:0">An AI-powered, multi-layer cyber defense platform that detects, analyzes and responds to modern threats in real time. Three independent shields work together, with one dashboard on top.</p>
+    <div class="shields">
+      <div class="sd"><span class="stt dv">In development</span><h4>Shield 1: Zero-Day Defense</h4><p>Watches process, file and network behavior with eBPF, scores risk with Isolation Forest, and responds automatically.</p><div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag">eBPF</span><span class="tag">BCC</span><span class="tag">Python</span><span class="tag">Isolation Forest</span></div></div>
+      <div class="pl2"><span class="stt">Planned</span><h4>Shield 2: Malicious URL Engine</h4><p>Phishing and malicious URL detection with a browser extension for real-time scanning.</p><div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag">DistilBERT</span><span class="tag">LightGBM</span><span class="tag">Extension</span></div></div>
+      <div class="pl2"><span class="stt">Planned</span><h4>Shield 3: User Behavior Analytics</h4><p>Behavioral baselines and insider threat detection with per-user risk scoring.</p><div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag">Behavioral ML</span><span class="tag">Statistics</span></div></div>
+    </div>
+    <div class="eyebrow">Roadmap</div>
+    <div class="road"><div class="on"><b>Phase 1 - in progress</b>Complete Shield 1, stabilize eBPF monitoring, improve anomaly detection.</div><div><b>Phase 2</b>Build Shield 2 and the browser extension.</div><div><b>Phase 3</b>Build Shield 3 with user profiling and insider threat analytics.</div><div><b>Phase 4</b>Integrate all shields into one dashboard, then pilot deployments.</div></div>
+    <div class="looking"><span class="tag">Looking for incubators</span><span class="tag">Open to investors</span><span class="tag">Looking for mentors</span><span class="tag">Early testers welcome</span></div>
+    <a class="btn p" id="txA" href="#contact">Talk to me about TrishulX</a>
+    <div class="note">Early stage. The code is private for now; happy to walk through the architecture on a call.</div>
+  </div></div>
+</div></section>
+
+<section id="services"><div class="cs" style="padding-top:40px">
+  <div class="eyebrow rv">Freelance</div><h2 class="h rv">Need something built?</h2>
+  <p class="lead rv">I take on a small number of client projects alongside my studies.</p>
+  <div class="sv"><div class="rv"><h4>Full-stack web apps</h4><p>React frontends with FastAPI backends and PostgreSQL, containerized and deployed.</p></div><div class="rv"><h4>AI-powered features</h4><p>Chatbots, classifiers, detection and analytics wired into your product.</p></div><div class="rv"><h4>Dashboards and data tools</h4><p>Clear, fast dashboards that turn raw data and alerts into decisions.</p></div></div>
+  <div style="margin-top:26px" class="rv"><a class="btn p" href="#contact">Start a project</a></div>
+</div></section>
+
+<section id="contact"><div id="end">
+  <div class="c rv">Directed by<b>Rohith V</b></div><div class="c rv">Models<b>PyTorch, HuggingFace, XGBoost</b></div><div class="c rv">Backend<b>FastAPI and PostgreSQL</b></div><div class="c rv">Frontend<b>React and TypeScript</b></div><div class="c rv">Security<b>eBPF and ROS 2</b></div>
+  <div class="big rv">Let's build something.</div>
+  <div class="row rv" id="crow"></div>
+  <div class="foot"><span id="cmail"></span>&copy; 2026 Rohith V</div>
+</div></section>
+
+<div id="mod" role="dialog" aria-modal="true"><div class="box" id="modbox"></div></div>
+
+<script>
+/* ===== EDIT THESE ===== */
+const CONFIG={
+  photo:'',      // e.g. 'assets/me.png' (transparent PNG cut-out)
+  email:'rohithvandadi07@gmail.com',
+  trishulxEmail:'trishulx2026@gmail.com',
+  linkedin:'https://www.linkedin.com/in/rohithv0507/',
+  resume:'',     // e.g. 'assets/Rohith_V_Resume.pdf'
+  github:'https://github.com/rohithvandadi07-ux'
+};
+/* ====================== */
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const seg=(p,a,b)=>clamp((p-a)/(b-a));
+const $=id=>document.getElementById(id);
+const prog=el=>{const r=el.getBoundingClientRect();return clamp(-r.top/(r.height-innerHeight))};
+const inView=el=>{const r=el.getBoundingClientRect();return r.bottom>-100&&r.top<innerHeight+100};
+let mx=0,my=0;
+
+/* contact buttons from config */
+(function(){
+  const row=$('crow');const add=(t,h,p,ext)=>{const a=document.createElement('a');a.className='btn'+(p?' p':'');a.textContent=t;a.href=h;if(ext){a.target='_blank';a.rel='noopener'}row.appendChild(a)};
+  if(CONFIG.email){add('Email me','mailto:'+CONFIG.email,true);row.lastChild.onclick=e=>{e.preventDefault();openContact('Portfolio enquiry')}}
+  if(CONFIG.resume)add('Download resume',CONFIG.resume,!CONFIG.email,true);
+  add('GitHub',CONFIG.github,!CONFIG.email&&!CONFIG.resume,true);
+  if(CONFIG.linkedin)add('LinkedIn',CONFIG.linkedin,false,true);
+  if(CONFIG.email)$('cmail').innerHTML='<a href="mailto:'+CONFIG.email+'" style="color:#cfd3e6">'+CONFIG.email+'</a><br><br>';
+  if(CONFIG.trishulxEmail||CONFIG.email){const te=CONFIG.trishulxEmail||CONFIG.email;$('txA').href='mailto:'+te+'?subject=TrishulX';$('txA').onclick=e=>{e.preventDefault();openContact('TrishulX',te)}}
+  if(CONFIG.photo)$('hsil').innerHTML='<img src="'+CONFIG.photo+'" alt="Rohith V" style="object-fit:contain;object-position:bottom">';
+})();
+
+/* grain */
+const grains=[...document.querySelectorAll('.grain')].map(c=>{c.width=200;c.height=120;return [c,c.getContext('2d')]});
+setInterval(()=>{if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;grains.forEach(([c,g])=>{if(!c.offsetParent||!inView(c.parentElement))return;const im=g.createImageData(200,120);for(let i=0;i<im.data.length;i+=4){const v=Math.random()*255;im.data[i]=im.data[i+1]=im.data[i+2]=v;im.data[i+3]=Math.random()*90}g.putImageData(im,0,0)})},90);
+
+/* A: hero + trailer */
+const cardsA=['<small>Rohith V presents</small>','<h2>I teach machines to see.</h2>','<h2>I teach systems to defend.</h2>','<h2>I build the product around it.</h2>','<small>Next</small><h2 style="font-size:clamp(20px,3.6vw,44px)">Scroll to see what I build</h2>'];
+const tcA=$('tcA');const elsA=cardsA.map(c=>{const d=document.createElement('div');d.className='tcard';d.innerHTML='<div>'+c+'</div>';tcA.appendChild(d);return d});
+const hero=$('hero'),hname=$('hname'),hsil=$('hsil');let pA=0;
+function updA(){
+  const p=pA=prog($('A'));const h=seg(p,.05,.15);
+  hero.style.opacity=1-h;hero.style.visibility=h>=1?'hidden':'visible';hero.style.transform='scale('+(1+h*.45)+')';
+  hname.style.transform='translate('+(-mx*20)+'px,'+(-my*10)+'px)';hsil.style.transform='translate('+(mx*16)+'px,'+(my*8+h*40)+'px)';
+  const lb=13*seg(p,.08,.17)+'%';$('lbA1').style.height=lb;$('lbA2').style.height=lb;
+  elsA.forEach((e,i)=>{const s=.17+i*.15,t=seg(p,s,s+.15);e.style.opacity=Math.min(1,Math.sin(Math.PI*t)*2.2);e.style.transform='scale('+(1+t*.1)+')'});
+  $('hintA').style.opacity=p<.03?1:0;
+}
+addEventListener('mousemove',e=>{mx=e.clientX/innerWidth*2-1;my=e.clientY/innerHeight*2-1;if(pA<.2)updA()});
+
+/* B: three acts */
+const glass=(a,b)=>'linear-gradient(135deg,'+a+','+b+')';
+const gridbg='repeating-linear-gradient(90deg,rgba(255,255,255,.1) 0 2px,transparent 2px 16px),repeating-linear-gradient(0deg,rgba(255,255,255,.1) 0 2px,transparent 2px 16px)';
+const ghost=(c,t)=>({bg:'rgba(255,255,255,.025)',bd:'2px dashed '+c,html:'<div style="position:absolute;inset:0;display:grid;place-items:center;font:600 11px monospace;letter-spacing:.3em;color:'+c+'">'+t+'</div>'});
+const DEV=[
+ {act:'What I build',title:'AI and ML',sub:'Models that see, read and decide. Every layer is something I built. Scroll to pull it apart.',rx:60,rz:-35,dz:80,cap:'Drawn from: phishing detector, accident detection, resume analyzer, chatbot and more.',layers:[
+  {n:'Data',d:'Datasets and feature engineering',c:'#8a93aa',bg:'linear-gradient(135deg,#2a2f40,#14171f)'},
+  {n:'Models',d:'DistilBERT, YOLOv8, BLIP',c:'#3da5ff',bg:'linear-gradient(135deg,#2a6fd0,#173f80)',html:'<div style="position:absolute;inset:0;background:'+gridbg+';opacity:.5"></div>'},
+  {n:'Classical ML',d:'XGBoost, LightGBM, Random Forest',c:'#3ddc84',bg:'linear-gradient(135deg,#1c8f5a,#0f5a38)',html:'<div style="position:absolute;inset:0;background:'+gridbg+';opacity:.7"></div>'},
+  {n:'Agents',d:'LLM agents on Groq and Gemini',c:'#ffb347',bg:glass('rgba(255,179,71,.35)','rgba(140,70,10,.3)'),bd:'2px solid rgba(255,200,120,.7)'},
+  {n:'API',d:'FastAPI services',c:'#8f7bff',bg:glass('rgba(150,130,255,.35)','rgba(60,40,140,.25)'),bd:'2px solid rgba(180,170,255,.7)'}]},
+ {act:'How I protect it',title:'Security',sub:'Systems that detect and defend. Each layer comes from a real project of mine.',rx:58,rz:25,dz:-70,cap:'Drawn from: Patient-Aware Cyber Resilience, VendorGuard, Detectra, phishing detector.',layers:[
+  {n:'Threat detection',d:'Malicious URLs and IoMT attacks',c:'#ff6b6b',bg:'linear-gradient(135deg,#7a1c24,#2a0a10)',html:'<div style="position:absolute;inset:0;background:'+gridbg+';opacity:.3"></div>'},
+  {n:'ROS 2 guard',d:'Detectra: security for robots',c:'#ffb347',bg:'linear-gradient(135deg,#a85a1c,#5a2f0c)',html:'<div style="position:absolute;inset:0;background:'+gridbg+';opacity:.3"></div>'},
+  {n:'Vendor risk',d:'VendorGuard scorecards',c:'#38d2c0',bg:'linear-gradient(135deg,#126b66,#093a3a)',html:'<div style="position:absolute;inset:0;background:'+gridbg+';opacity:.3"></div>'},
+  {n:'Policy engine',d:'Human approval for critical actions',c:'#3da5ff',bg:glass('rgba(61,165,255,.3)','rgba(20,60,130,.25)'),bd:'2px solid rgba(110,180,255,.7)'},
+  {n:'SOC dashboard',d:'React and TypeScript',c:'#8f7bff',bg:glass('rgba(150,130,255,.35)','rgba(60,40,140,.25)'),bd:'2px solid rgba(180,170,255,.7)',html:'<div style="position:absolute;left:16px;top:14px;right:16px;height:12px;background:rgba(255,255,255,.7);border-radius:6px"></div><div style="position:absolute;left:16px;top:40px;width:100px;height:64px;background:rgba(255,255,255,.5);border-radius:8px"></div><div style="position:absolute;left:126px;top:40px;right:16px;height:64px;background:rgba(255,255,255,.28);border-radius:8px"></div>'}]},
+ {act:'What I am building next',title:'TrishulX',sub:'My own multi-layer cyber defense platform. Solid means in development, dashed means planned.',rx:62,rz:-15,dz:90,cap:'Roadmap: Phase 1 of 4 in progress. Shield 1 is in development; Shield 2, Shield 3 and the dashboard are planned.',layers:[
+  {n:'Shield 1: Zero-Day',d:'eBPF and Isolation Forest',s:'In development',sc:'dv',c:'#ffb347',bg:'radial-gradient(circle at 50% 50%,#ffd27a 0 10px,transparent 11px),repeating-radial-gradient(circle at 50% 50%,rgba(255,179,71,.5) 0 2px,transparent 2px 22px),linear-gradient(135deg,#7a4a10,#2a1806)',bd:'2px solid #ffb347',glow:'0 0 28px rgba(255,179,71,.55)'},
+  Object.assign({n:'Shield 2: URL engine',d:'DistilBERT and browser extension',s:'Planned',c:'#38d2c0'},ghost('#38d2c0','PLANNED')),
+  Object.assign({n:'Shield 3: Behavior',d:'Insider threat analytics',s:'Planned',c:'#8f7bff'},ghost('#8f7bff','PLANNED')),
+  Object.assign({n:'Unified dashboard',d:'All shields in one view',s:'Planned',c:'#cfd3e6'},ghost('#cfd3e6','PLANNED'))]}
+];
+const sc3=$('sc3'),lbs=$('lbs'),acard=$('acard'),devEls=[],lbEls=[];
+DEV.forEach(d=>{
+  const g=document.createElement('div');g.className='dev';
+  const pls=d.layers.map(l=>{const e=document.createElement('div');e.className='pl';e.style.background=l.bg;if(l.bd)e.style.border=l.bd;if(l.glow)e.style.boxShadow=l.glow;if(l.html)e.innerHTML=l.html;g.appendChild(e);return e});
+  sc3.appendChild(g);devEls.push({g,pls});
+  const box=document.createElement('section');
+  const ls=d.layers.map(l=>{const e=document.createElement('div');e.style.borderColor=l.c;e.innerHTML='<b>'+l.n+'</b>'+(l.s?'<em class="'+(l.sc||'')+'">'+l.s+'</em>':'')+'<small>'+l.d+'</small>';e.style.opacity=0;return e});
+  [...ls].reverse().forEach(e=>box.appendChild(e));lbs.appendChild(box);lbEls.push({box,ls});
+});
+function updB(){
+  const p=prog($('devs'));
+  const s=clamp(Math.min(innerWidth/760,innerHeight/560),.65,1.5);
+  const k=Math.min(2,Math.floor(p*3)),q=p*3-k,d=DEV[k];
+  $('actbar').textContent=d.act+' - '+d.title;
+  [...$('actdots').children].forEach((e,i)=>e.className=i<=k?'on':'');
+  acard.innerHTML='<div><small>'+d.act+'</small><h2>'+d.title+'</h2><p>'+d.sub+'</p></div>';
+  acard.style.opacity=seg(q,0,.05)*(1-seg(q,.1,.17));
+  const vis=seg(q,.1,.18)*(1-seg(q,.93,1)),ex=seg(q,.18,.62);
+  $('cap').textContent=d.cap;$('cap').style.opacity=vis;
+  devEls.forEach((o,i)=>{
+    o.g.style.display=i===k?'block':'none';lbEls[i].box.style.display=i===k?'flex':'none';
+    if(i!==k)return;
+    o.g.style.opacity=vis;lbEls[i].box.style.opacity=vis;
+    o.g.style.transform='scale('+s+') rotateX('+d.rx+'deg) rotateZ('+(d.rz+q*d.dz)+'deg)';
+    const gap=4+ex*42;o.pls.forEach((e,j)=>{e.style.transform='translateZ('+(j*gap)+'px)'});
+    lbEls[i].ls.forEach((e,j)=>{e.style.opacity=seg(q,.5+j*.06,.57+j*.06)});
+  });
+}
+let raf=0;function tick(){raf=0;if(inView($('A')))updA();if(inView($('devs')))updB()}
+addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(tick)},{passive:true});addEventListener('resize',tick);tick();
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+
+/* skills */
+const SK=[['AI and ML',['PyTorch','HuggingFace','YOLOv8','DistilBERT','XGBoost','LightGBM','scikit-learn','Groq and Gemini APIs']],['Security',['eBPF and BCC','Threat detection','Anomaly detection','IoMT security','ROS 2 security']],['Backend',['Python','FastAPI','PostgreSQL','Docker']],['Frontend',['React','TypeScript','Vite','JavaScript','Chart.js']]];
+$('skills').innerHTML=SK.map(s=>'<div><h4>'+s[0]+'</h4><div class="tg">'+s[1].map(t=>'<span class="tag">'+t+'</span>').join('')+'</div></div>').join('');
+
+/* projects */
+const G=CONFIG.github+'/';
+const P=[
+ {t:'Patient-Aware Cyber Resilience',repo:'patient-aware-cyber-resilience',tags:['Security','AI/ML','Full-stack'],g:'linear-gradient(135deg,#7c5cff,#c0392b)',st:'Research prototype',one:'Autonomous defense for healthcare IoMT devices that weighs cyber risk against clinical impact.',
+  prob:'Most healthcare IoMT security stops at detecting an attack. When the device is an infusion pump or a ventilator, the most secure response may not be the safest one for the patient.',
+  built:'A closed loop: ML detection (XGBoost and Random Forest on CICIoMT2024), five AI agents for investigation, threat reasoning, clinical context, response planning and recovery, a dual-risk engine that scores cyber risk against clinical criticality, and a deterministic policy layer that decides whether to act autonomously or ask a human. Incidents are recorded on Hyperledger Fabric with no raw patient data, and a React SOC dashboard shows the full incident lifecycle.',
+  res:'On 162 high-stakes attack trials with synthetic stand-in data, a fixed-response baseline ran a disruptive action all 162 times; the full system did so 0 times and routed them to human approval. On the real CICIoMT2024 test set (1.6M rows) it took no unsafe autonomous actions on high-stakes trials. Part of the data is synthetic, and the clinical context and LLM agents are stand-ins.',
+  stack:['Python','FastAPI','React','TypeScript','PostgreSQL','Docker','Hyperledger Fabric','XGBoost','Gemini']},
+ {t:'AI Phishing Detection System',repo:'ai-phishing-detection-system',tags:['AI/ML','Security'],g:'linear-gradient(135deg,#ff6b6b,#7a1c24)',one:'Multi-model malicious URL detection combining DistilBERT and LightGBM.',
+  prob:'Detecting malicious and phishing URLs before a user clicks them.',built:'A multi-model detector that combines a DistilBERT language model with LightGBM, served through a FastAPI service.',stack:['Python','HuggingFace','DistilBERT','LightGBM','FastAPI']},
+ {t:'VendorGuard',repo:'vendorguard',tags:['Full-stack','Security'],g:'linear-gradient(135deg,#38d2c0,#126b66)',one:'Enterprise vendor risk scorecard platform with automated security checks.',
+  prob:'Teams need a clear view of which third-party vendors put them at risk.',built:'A full-stack platform that scores vendors with automated security checks and presents the results as scorecards.',stack:['FastAPI','React','PostgreSQL','Docker']},
+ {t:'Detectra',repo:'Detectra-',tags:['Security','Robotics'],g:'linear-gradient(135deg,#ffb347,#a85a1c)',one:'Automated security layer for ROS 2 systems.',
+  prob:'Robotics software is rarely built with security in mind.',built:'An automated security layer for ROS 2 systems, part of my research on ROS 2 security.',stack:['ROS 2','Python']},
+ {t:'Accident Detection',repo:'accident-detection',tags:['AI/ML'],g:'linear-gradient(135deg,#3da5ff,#1b3f8a)',one:'Real-time accident detection from images and videos using YOLOv8.',
+  prob:'Accidents often go unnoticed until someone reports them.',built:'A computer vision pipeline that detects accidents in images and video in real time using YOLOv8.',stack:['Python','YOLOv8','OpenCV']},
+ {t:'AI Resume Analyzer',repo:'ai-resume-analyzer',tags:['AI/ML','Full-stack'],g:'linear-gradient(135deg,#3ddc84,#0b6b5b)',one:'Scores resumes, finds skill gaps and suggests ATS improvements.',
+  prob:'Candidates rarely know why a resume gets filtered out.',built:'A tool that scores a resume, identifies its strengths and weaknesses, finds skill gaps and suggests improvements for applicant tracking systems.',stack:['Python']}
+];
+const M=[['ai-chatbot','AI chatbot with memory and multiple personalities on Groq and LLaMA 3.',['AI/ML']],['ecotrace-ai','Carbon footprint tracker with a Gemini AI advisor and Chart.js dashboards.',['AI/ML','Full-stack']],['ros2_object_scanner','3D object reconstruction in a ROS 2 Jazzy simulation.',['Robotics']],['image-caption-generator','Natural language descriptions for images with BLIP.',['AI/ML']],['disease-prediction','Disease prediction from symptoms with Random Forest and a Groq-powered Streamlit app.',['AI/ML']]];
+const TAGS=['All','AI/ML','Security','Full-stack','Robotics','Startup'];
+const chipsEl=$('chips'),pg=$('pgrid'),mg=$('mgrid');
+function filt(t){[...chipsEl.children].forEach(x=>x.classList.toggle('on',x.textContent===t));[...pg.children,...mg.children].forEach(el=>el.classList.toggle('hide',t!=='All'&&!el.dataset.t.split(',').includes(t)))}
+TAGS.forEach((t,i)=>{const c=document.createElement('button');c.className='chip'+(i?'':' on');c.textContent=t;c.onclick=()=>filt(t);chipsEl.appendChild(c)});
+P.forEach((p,i)=>{const b=document.createElement('button');b.className='pc rv';b.dataset.t=p.tags.join(',');b.innerHTML='<div class="th" style="background:'+p.g+'">'+(p.st||p.tags[0])+'</div><div class="bd"><h4>'+p.t+'</h4><p>'+p.one+'</p><div class="tg">'+p.tags.map(t=>'<span class="tag">'+t+'</span>').join('')+'</div></div>';b.onclick=()=>openMod(i);pg.appendChild(b);io.observe(b)});
+/* TrishulX card */
+(function(){const b=document.createElement('button');b.className='pc rv';b.id='tcard';b.dataset.t='Startup,Security,AI/ML';b.innerHTML='<div class="th" style="background:linear-gradient(135deg,#ffb347,#8f7bff)">Startup - in development</div><div class="bd"><h4>TrishulX</h4><p>My AI-powered, multi-layer cyber defense platform. Shield 1 in development.</p><div class="tg"><span class="tag">Startup</span><span class="tag">Security</span><span class="tag">AI/ML</span></div></div>';b.onclick=()=>{$('trishulx').scrollIntoView({behavior:'smooth'})};pg.insertBefore(b,pg.children[1]);io.observe(b)})();
+M.forEach(m=>{const a=document.createElement('a');a.className='mc';a.dataset.t=m[2].join(',');a.href=G+m[0];a.target='_blank';a.rel='noopener';a.innerHTML='<b>'+m[0]+'</b>'+m[1];mg.appendChild(a)});
+/* modal */
+function openMod(i){const p=P[i];$('modbox').innerHTML='<button class="x" aria-label="Close" onclick="closeMod()">&times;</button><h3>'+p.t+'</h3><div class="st">'+(p.st||p.tags.join(' / '))+'</div><h5>Problem</h5><p>'+p.prob+'</p><h5>What I built</h5><p>'+p.built+'</p>'+(p.res?'<h5>Results (from the project README)</h5><p>'+p.res+'</p>':'')+'<h5>Stack</h5><div class="tg">'+p.stack.map(t=>'<span class="tag">'+t+'</span>').join('')+'</div><div style="margin-top:20px"><a class="btn p" target="_blank" rel="noopener" href="'+G+p.repo+'">View on GitHub</a></div>';$('mod').classList.add('on')}
+function closeMod(){$('mod').classList.remove('on')}
+function openContact(sub,addr){
+  const m=addr||CONFIG.email,q=encodeURIComponent(sub);
+  $('modbox').innerHTML='<button class="x" aria-label="Close" onclick="closeMod()">&times;</button><h3>Get in touch</h3><div class="st">'+sub+'</div><p>Send me an email and I will reply as soon as I can.</p><div id="mailv" style="margin:16px 0;padding:14px;border:1px solid #2a3050;border-radius:12px;font-size:18px;font-weight:600;user-select:all;text-align:center">'+m+'</div><div style="display:flex;flex-wrap:wrap;gap:10px"><button class="btn p" id="cpy">Copy email</button><a class="btn" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to='+m+'&su='+q+'">Open in Gmail</a><a class="btn" href="mailto:'+m+'?subject='+q+'">Use my mail app</a>'+(CONFIG.linkedin?'<a class="btn" target="_blank" rel="noopener" href="'+CONFIG.linkedin+'">LinkedIn</a>':'')+'</div>';
+  $('cpy').onclick=()=>{const done=()=>{$('cpy').textContent='Copied!'};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(m).then(done,fb)}else fb();
+    function fb(){const r=document.createRange();r.selectNodeContents($('mailv'));const s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');done()}catch(e){$('cpy').textContent='Press Ctrl+C'}}};
+  $('mod').classList.add('on');
+}
+$('mod').addEventListener('click',e=>{if(e.target===$('mod'))closeMod()});addEventListener('keydown',e=>{if(e.key==='Escape')closeMod()});
+</script>
+</body>
+</html>
