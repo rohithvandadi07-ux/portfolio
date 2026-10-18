@@ -121,11 +121,36 @@ h2.h{font-size:clamp(28px,5vw,52px);margin:8px 0 14px;letter-spacing:-.02em;line
 #end .big{font-family:'Arial Black',Impact,sans-serif;font-size:clamp(30px,6vw,72px);margin:50px 0 24px;color:#fff;letter-spacing:.03em}
 #end .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;font-family:system-ui,sans-serif}
 #end .foot{margin-top:50px;font-size:12px;color:#666d85;font-family:system-ui,sans-serif}
+/* ask rohith */
+.nav a.ask{border:1px solid #4b3f9e;background:rgba(124,92,255,.2);color:#fff;padding:6px 12px;border-radius:99px;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.nav a.ask:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal)}
+#fab{position:fixed;right:18px;bottom:18px;z-index:80;display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:99px;border:0;cursor:pointer;font:600 14px/1 inherit;color:#fff;background:linear-gradient(135deg,#7c5cff,#38d2c0);box-shadow:0 8px 28px rgba(80,60,200,.45);opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s,transform .3s}
+#fab.show{opacity:1;pointer-events:auto;transform:none}
+#chat{position:fixed;right:18px;bottom:18px;z-index:90;width:min(390px,calc(100vw - 24px));height:min(580px,calc(100vh - 100px));display:none;flex-direction:column;background:#0d1019;border:1px solid #2a3050;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.6);overflow:hidden}
+#chat.on{display:flex}
+#chat header{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+#chat header div{flex:1;min-width:0}#chat header b{display:block;font-size:15px}#chat header small{display:block;color:var(--muted);font-size:11.5px;margin-top:2px}
+#chat header button{background:none;border:0;color:#8d93a8;font-size:24px;cursor:pointer;line-height:1}
+#cmsgs{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.cm{max-width:88%;padding:10px 13px;border-radius:14px;font-size:14px;line-height:1.5;white-space:pre-line;word-wrap:break-word}
+.cm.b{align-self:flex-start;background:#171b2b;color:#dfe2f0;border-bottom-left-radius:4px}
+.cm.u{align-self:flex-end;background:linear-gradient(135deg,#6a4df0,#2fb8aa);color:#fff;border-bottom-right-radius:4px}
+.cm .acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;white-space:normal}
+.cm .acts button{font:600 12px inherit;padding:6px 11px;border-radius:99px;border:1px solid #3a4160;background:#0d1019;color:#e8ebf8;cursor:pointer}.cm .acts button:hover{border-color:var(--accent)}
+.cm.t{display:flex;gap:4px;padding:13px 14px}.cm.t i{width:6px;height:6px;border-radius:50%;background:#7d85a3;animation:td 1s infinite}.cm.t i:nth-child(2){animation-delay:.15s}.cm.t i:nth-child(3){animation-delay:.3s}
+@keyframes td{0%,60%,100%{opacity:.25;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+#csug{display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 10px}
+#csug button{font:12.5px inherit;padding:6px 11px;border-radius:99px;border:1px solid #2a3050;background:#121626;color:#c4c9de;cursor:pointer;text-align:left}#csug button:hover{border-color:var(--accent);color:#fff}
+#cform{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--line)}
+#cin{flex:1;min-width:0;background:#121626;border:1px solid #2a3050;border-radius:99px;padding:10px 15px;color:var(--text);font-size:16px;outline:none}#cin:focus{border-color:var(--accent)}
+#cform button{border:0;border-radius:99px;padding:0 16px;font-weight:700;color:#fff;background:linear-gradient(135deg,#7c5cff,#38d2c0);cursor:pointer}
+#cnote{padding:0 14px 10px;font-size:11px;color:#6b7390}
+@media(max-width:600px){#chat{right:0;left:0;bottom:0;width:100%;height:80vh;height:80dvh;border-radius:18px 18px 0 0}.nav{gap:10px;padding:12px 14px}}
 @media(prefers-reduced-motion:reduce){.rv{transition:none;opacity:1;transform:none}.grain{display:none}}
 </style>
 </head>
 <body>
-<nav class="nav"><b>ROHITH V</b><a class="l" href="#devs">Story</a><a class="l" href="#projects">Projects</a><a class="l" href="#trishulx">TrishulX</a><a class="l" href="#services">Freelance</a><a class="l" href="#contact">Contact</a><a class="skip" href="#about">Skip intro</a></nav>
+<nav class="nav"><b>ROHITH V</b><a class="l" href="#devs">Story</a><a class="l" href="#projects">Projects</a><a class="l" href="#trishulx">TrishulX</a><a class="l" href="#services">Freelance</a><a class="l" href="#contact">Contact</a><a class="ask" href="#" role="button" id="navAsk">Ask Rohith</a><a class="skip" href="#about">Skip intro</a></nav>
 
 <section class="sec" id="A" style="height:560vh"><div class="stk">
   <canvas class="grain"></canvas><div class="vig"></div><div class="lb t" id="lbA1"></div><div class="lb b" id="lbA2"></div>
@@ -195,6 +220,15 @@ h2.h{font-size:clamp(28px,5vw,52px);margin:8px 0 14px;letter-spacing:-.02em;line
 
 <div id="mod" role="dialog" aria-modal="true"><div class="box" id="modbox"></div></div>
 
+<button id="fab" aria-label="Ask Rohith"><span>&#9993;</span> Ask Rohith</button>
+<div id="chat" role="dialog" aria-label="Ask Rohith" aria-modal="false">
+  <header><div><b>Ask Rohith</b><small id="cmode">Portfolio assistant</small></div><button id="cclose" aria-label="Close chat">&times;</button></header>
+  <div id="cmsgs" aria-live="polite"></div>
+  <div id="csug"></div>
+  <form id="cform" autocomplete="off"><input id="cin" maxlength="300" placeholder="Ask about projects, TrishulX, hiring..." aria-label="Your question"><button type="submit">Send</button></form>
+  <div id="cnote">Answers come only from the content of this site. For anything else, email Rohith.</div>
+</div>
+
 <script>
 /* ===== EDIT THESE ===== */
 const CONFIG={
@@ -202,7 +236,8 @@ const CONFIG={
   email:'rohithvandadi07@gmail.com',
   trishulxEmail:'trishulx2026@gmail.com',
   linkedin:'https://www.linkedin.com/in/rohithv0507/',
-  resume:'',     // e.g. 'assets/Rohith_V_Resume.pdf'
+  resume:'assets/Rohith_V_Resume.pdf',
+  chatApi:'/api/chat',   // serverless AI endpoint (see api/chat.js). Blank = built-in answers only
   github:'https://github.com/rohithvandadi07-ux'
 };
 /* ====================== */
@@ -344,6 +379,104 @@ function openContact(sub,addr){
   $('mod').classList.add('on');
 }
 $('mod').addEventListener('click',e=>{if(e.target===$('mod'))closeMod()});addEventListener('keydown',e=>{if(e.key==='Escape')closeMod()});
+
+/* ===== Ask Rohith chat ===== */
+(function(){
+  const KB=[
+   {k:[' hi ',' hello',' hey ','good morning','good evening'],a:"Hi! I can tell you about Rohith's projects, his startup TrishulX, his skills, or how to work with him. What would you like to know?"},
+   {k:[' thanks','thank you',' thx'],a:"You're welcome! If you'd like to talk to Rohith directly, the email button below is the fastest way.",acts:['contact']},
+   {k:['why should','why hire','strength','different from','special','stand out'],a:"Rohith builds whole products, not just models: he trains the model, builds the backend that serves it and designs the frontend people use. He likes problems where a model's decision has real consequences, like healthcare security, and he is upfront about what is finished and what is still a prototype.",acts:['proj0']},
+   {k:['who are','who is','introduce','yourself','tell me about rohith','about rohith','about him','about you',' bio'],a:"Rohith V is a third-year B.Tech student (AI and Data Science) at Amrita Vishwa Vidyapeetham, Coimbatore. He works across the whole stack of an AI product: models, backend and frontend, with a focus on AI-driven cybersecurity. He is also building TrishulX, his own cyber defense platform idea.",acts:['proj','tx']},
+   {k:['skill','tech stack','technolog','languages','expertise','good at','tools he','what can he do'],a:"AI and ML: PyTorch, HuggingFace, YOLOv8, DistilBERT, XGBoost, LightGBM, scikit-learn, Groq and Gemini APIs.\nSecurity: eBPF and BCC, threat and anomaly detection, IoMT security, ROS 2 security.\nBackend: Python, FastAPI, PostgreSQL, Docker.\nFrontend: React, TypeScript, Vite, JavaScript, Chart.js.",acts:['go:#about:See skills']},
+   {k:['college','university','education','degree','btech','b.tech','amrita','studying','student'],a:"Rohith is doing his B.Tech at Amrita Vishwa Vidyapeetham, Coimbatore (2024 to present), in AI and Data Science.",acts:['resume']},
+   {k:['where ','located','location','which city','hosur','relocat','remote'],a:"Rohith is from Hosur, Tamil Nadu, and studies in Coimbatore. For relocation, remote or on-site questions about a specific role, email him.",acts:['contact']},
+   {k:['patient','pacr','healthcare','iomt','medical','resilien','hospital','clinical','flagship'],a:"Patient-Aware Cyber Resilience is his flagship project: autonomous defense for healthcare IoMT devices that weighs cyber risk against clinical impact, so the response never harms the patient more than the attack would. It is a research prototype.\nDetection uses XGBoost and Random Forest on CICIoMT2024, five AI agents investigate and plan, and a policy layer decides whether to act or ask a human. On 162 high-stakes trials with synthetic stand-in data, a fixed-response baseline took a disruptive action all 162 times; the full system did so 0 times. Part of the data is synthetic.",acts:['proj0']},
+   {k:['phishing',' url','malicious link','malicious url'],a:"The AI Phishing Detection System is a multi-model malicious URL detector that combines a DistilBERT language model with LightGBM, served through FastAPI. His resume also lists a related research version for IoT sensor-data safety, using DistilBERT, a 1D CNN, Random Forest and LightGBM.",acts:['proj1']},
+   {k:['vendor'],a:"VendorGuard is a full-stack enterprise vendor risk platform: it runs automated security checks on third-party vendors and shows the results as scorecards. Built with FastAPI, React, PostgreSQL and Docker.",acts:['proj2']},
+   {k:['detectra',' ros ','ros2','ros 2','robot'],a:"Detectra is an automated security layer for ROS 2 robotics systems, part of Rohith's research on ROS 2 security. He also built a 3D object scanner in a ROS 2 Jazzy simulation.",acts:['proj3']},
+   {k:['accident','yolo','computer vision'],a:"Accident Detection finds accidents in images and video in real time using YOLOv8 and OpenCV.",acts:['proj4']},
+   {k:['resume analy','analyzer','ats '],a:"The AI Resume Analyzer scores a resume, points out strengths and weaknesses, finds skill gaps and suggests improvements for applicant tracking systems.",acts:['proj5']},
+   {k:['zdade','zero-day','zero day','ebpf','lstm','intrusion','syscall','system call'],a:"ZDADE is a real-time zero-day threat detection system (Nov 2025 to Mar 2026, from his resume). It watches the kernel with eBPF and uses an LSTM-based neuro-symbolic model on system call sequences to detect an attack and automatically terminate the malicious process."},
+   {k:['research','mri','bayesian','autoencoder','uav','mappo','academic','coursework','paper','publication','published'],a:"Besides the projects above, his resume lists research-style work: ADMM-based deep unrolling for MRI denoising, a Bayesian neural network using functional stochastic gradient MCMC, a denoising autoencoder study on FashionMNIST, and a hybrid GA and MAPPO model for UAV task offloading. I haven't listed any published papers on the site.",acts:['resume']},
+   {k:['project','built','what has','what have','portfolio','work on','made'],a:"Featured projects: Patient-Aware Cyber Resilience (healthcare IoMT defense, his flagship), AI Phishing Detection, VendorGuard, Detectra (ROS 2 security), Accident Detection and the AI Resume Analyzer. There are also smaller repos like an AI chatbot, a carbon footprint tracker and an image caption generator.",acts:['proj0','go:#projects:See all projects']},
+   {k:['invest','incubat','funding','mentor','traction','customer','revenue','launch','how far','progress','status','stage','early tester'],a:"TrishulX is an early-stage idea, not a launched product: by Rohith's own estimate about 40 to 50 percent of the groundwork is done. Shield 1 is in development, and there are no customers or funding yet. He is looking for incubators, investors, mentors and early testers.",acts:['txmail','go:#trishulx:See the roadmap']},
+   {k:['trishul','startup','shield','cyber defense','cyber defence'],a:"TrishulX is Rohith's AI-powered, multi-layer cyber defense platform. The plan has four phases: Shield 1 (in development), Shield 2 and Shield 3 (planned), then a unified dashboard that brings them together. Right now it is Phase 1 of 4.",acts:['go:#trishulx:See the roadmap','txmail']},
+   {k:['hire','hiring','internship',' intern ','interns','placement','job','available','opening','recruit','full-time','full time','opportunit'],a:"Yes. Rohith is looking for internships and placement roles in AI and ML, cybersecurity and full-stack work. His resume is available to download, and email is the fastest way to reach him.",acts:['resume','contact']},
+   {k:['freelance','client','website','web app','pricing','price','cost',' rate','charge','quote','dashboard','hire him for'],a:"He takes freelance work: full-stack web apps, AI-powered features, and dashboards or data tools. There are no fixed rates because it depends on scope, so send a short description of what you need and he will reply.",acts:['project']},
+   {k:['contact','email','reach','mail','talk to','connect','phone','number','call','whatsapp'],a:"Email is the best way: "+CONFIG.email+". He is also on LinkedIn. His phone number isn't listed publicly.",acts:['contact','linkedin']},
+   {k:['resume','cv ','download'],a:"You can download his resume with the button below.",acts:['resume']},
+   {k:['github','linkedin','repo','source code'],a:"GitHub: "+CONFIG.github+"\nLinkedIn: "+(CONFIG.linkedin||''),acts:['github','linkedin']},
+   {k:['backend','frontend','full stack','full-stack','fastapi','react','database','postgres','web dev'],a:"Backend: Python, FastAPI, PostgreSQL and Docker. Frontend: React, TypeScript, Vite and Chart.js. VendorGuard and Patient-Aware Cyber Resilience are the best examples of him building a full product around a model.",acts:['proj2','proj0']},
+   {k:['hardware','arduino','iot','embedded','raspberry'],a:"His focus is software. His resume does list a few academic IoT and wireless projects (a biofeedback arm exerciser on a Raspberry Pi, and OFDM image transmission on an SDR), but his main work is AI, security and full-stack.",acts:['resume']},
+   {k:['machine learning','deep learning',' ml ',' ai ','model','train','neural'],a:"Models he has worked with: DistilBERT, 1D CNN, Random Forest, LightGBM and XGBoost for detection, YOLOv8 for vision, LSTM for sequence analysis, and Bayesian neural networks and deep unrolling for research. He also builds around LLM APIs like Groq and Gemini.",acts:['proj']},
+   {k:['security','cyber','defen','threat','hack','attack'],a:"Security is his main focus: AI-driven threat detection, healthcare IoMT defense, ROS 2 security, eBPF-based zero-day detection, and his TrishulX platform idea.",acts:['proj0','tx']}
+  ];
+  const SUG=['What has he built?','Tell me about TrishulX','Is he open to internships?','Can he build my website?'];
+  const FALLBACK="I don't have that on the site yet. You can ask about his projects, skills, TrishulX, internships or freelance work, or email Rohith directly.";
+
+  const el=id=>document.getElementById(id);
+  const chat=el('chat'),msgs=el('cmsgs'),sug=el('csug'),inp=el('cin'),fab=el('fab');
+  const hist=[];let busy=false,apiDead=false;
+
+  function actBtn(code){
+    const go=(sel)=>{closeChat();const t=document.querySelector(sel);if(t)t.scrollIntoView({behavior:'smooth'})};
+    if(code==='contact'&&CONFIG.email)return['Email Rohith',()=>{closeChat();openContact('Question from portfolio chat')}];
+    if(code==='txmail')return['Email about TrishulX',()=>{closeChat();openContact('TrishulX',CONFIG.trishulxEmail||CONFIG.email)}];
+    if(code==='project')return['Start a project',()=>{closeChat();openContact('Freelance project')}];
+    if(code==='resume'&&CONFIG.resume)return['Download resume',()=>window.open(CONFIG.resume,'_blank')];
+    if(code==='github'&&CONFIG.github)return['GitHub',()=>window.open(CONFIG.github,'_blank')];
+    if(code==='linkedin'&&CONFIG.linkedin)return['LinkedIn',()=>window.open(CONFIG.linkedin,'_blank')];
+    if(code==='proj')return['See projects',()=>go('#projects')];
+    if(code==='tx')return['About TrishulX',()=>go('#trishulx')];
+    if(/^proj\d$/.test(code)){const i=+code.slice(4);return['Open: '+P[i].t,()=>{closeChat();openMod(i)}]}
+    if(code.startsWith('go:')){const [,sel,label]=code.split(':');return[label,()=>go(sel)]}
+    return null;
+  }
+  function add(role,text,acts){
+    const d=document.createElement('div');d.className='cm '+(role==='u'?'u':'b');d.textContent=text;
+    if(acts&&acts.length){const w=document.createElement('div');w.className='acts';acts.forEach(c=>{const b=actBtn(c);if(!b)return;const x=document.createElement('button');x.type='button';x.textContent=b[0];x.onclick=b[1];w.appendChild(x)});if(w.children.length)d.appendChild(w)}
+    msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d;
+  }
+  function typing(){const d=document.createElement('div');d.className='cm b t';d.innerHTML='<i></i><i></i><i></i>';msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d}
+  function local(q){
+    const s=' '+q.toLowerCase().replace(/[^a-z0-9+.# -]/g,' ')+' ';let best=null,bs=0;
+    KB.forEach(e=>{let sc=0;e.k.forEach(k=>{if(s.includes(k))sc+=k.trim().length>4?2:1});if(sc>bs){bs=sc;best=e}});
+    return best;
+  }
+  async function viaApi(){
+    const ctl=new AbortController(),t=setTimeout(()=>ctl.abort(),15000);
+    try{
+      const r=await fetch(CONFIG.chatApi,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:hist.slice(-6)}),signal:ctl.signal});
+      if(!r.ok){if(r.status!==429)apiDead=true;return null}
+      const j=await r.json();return (j&&typeof j.reply==='string'&&j.reply.trim())?j.reply.trim():null;
+    }catch(e){apiDead=true;return null}finally{clearTimeout(t)}
+  }
+  async function ask(q){
+    q=q.trim();if(!q||busy)return;busy=true;sug.style.display='none';
+    add('u',q);hist.push({role:'user',content:q});
+    const ty=typing();let reply=null,acts=null;
+    if(CONFIG.chatApi&&!apiDead){reply=await viaApi();if(reply){const e=local(q);acts=e&&e.acts}}
+    if(!reply){const e=local(q);await new Promise(r=>setTimeout(r,450));reply=e?e.a:FALLBACK;acts=e?e.acts:['contact','proj']}
+    ty.remove();add('b',reply,acts);hist.push({role:'assistant',content:reply});
+    if(hist.length>12)hist.splice(0,hist.length-12);
+    el('cmode').textContent=(CONFIG.chatApi&&!apiDead)?'AI assistant, answers from this site':'Portfolio assistant';
+    busy=false;
+  }
+  function openChat(){
+    chat.classList.add('on');fab.classList.remove('show');
+    if(!msgs.children.length){add('b',"Hi, I'm Rohith's portfolio assistant. Ask me about his projects, TrishulX, skills, or how to work with him.");SUG.forEach(t=>{const b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=()=>ask(t);sug.appendChild(b)})}
+    if(innerWidth>700)setTimeout(()=>inp.focus(),50);
+  }
+  function closeChat(){chat.classList.remove('on');updFab()}
+  window.closeChat=closeChat;
+  function updFab(){const a=el('about');if(!a)return;const show=!chat.classList.contains('on')&&a.getBoundingClientRect().top<innerHeight*.8;fab.classList.toggle('show',show)}
+  el('cform').addEventListener('submit',e=>{e.preventDefault();const v=inp.value;inp.value='';ask(v)});
+  el('cclose').onclick=closeChat;fab.onclick=openChat;
+  el('navAsk').onclick=e=>{e.preventDefault();chat.classList.contains('on')?closeChat():openChat()};
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&chat.classList.contains('on')&&!el('mod').classList.contains('on'))closeChat()});
+  addEventListener('scroll',updFab,{passive:true});updFab();
+})();
+
 </script>
 </body>
 </html>
