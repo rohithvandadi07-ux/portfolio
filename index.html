@@ -29,9 +29,10 @@ button{font-family:inherit}
 .hint{position:absolute;bottom:2.2%;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.3em;color:#c9c4b0;z-index:10;text-transform:uppercase;transition:opacity .3s}
 /* hero */
 #hero{position:absolute;inset:0;z-index:2;background:radial-gradient(circle at 50% 60%,#1b1840,#06070b 70%)}
-#hname{position:absolute;left:0;right:0;top:14%;text-align:center;font-weight:900;font-size:clamp(54px,17vw,300px);letter-spacing:-.04em;line-height:.9;white-space:nowrap;background:linear-gradient(180deg,#fff 20%,#6d5df0);-webkit-background-clip:text;background-clip:text;color:transparent;will-change:transform}
-#hsil{position:absolute;left:50%;bottom:-2%;height:80%;aspect-ratio:400/520;margin-left:calc(-40vh*400/520);will-change:transform;filter:drop-shadow(0 0 26px rgba(124,92,255,.45))}
-#hsil svg,#hsil img{width:100%;height:100%}
+#hname{position:absolute;left:0;right:0;top:9%;text-align:center;font-weight:900;font-size:clamp(54px,17vw,300px);letter-spacing:-.04em;line-height:.9;white-space:nowrap;background:linear-gradient(180deg,#fff 20%,#6d5df0);-webkit-background-clip:text;background-clip:text;color:transparent;will-change:transform}
+#hsil{position:absolute;left:0;right:0;bottom:-1%;height:76%;display:flex;justify-content:center;will-change:transform;filter:drop-shadow(0 0 26px rgba(124,92,255,.45))}
+#hsil svg,#hsil img{height:100%;width:auto;max-width:100%}
+#hsil img{-webkit-mask-image:linear-gradient(to bottom,#000 78%,transparent 99%),linear-gradient(to right,transparent 0,#000 14%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,#000 78%,transparent 99%),linear-gradient(to right,transparent 0,#000 14%);mask-composite:intersect}
 #hsub{position:absolute;left:0;right:0;bottom:7%;text-align:center;z-index:3;font-size:clamp(11px,1.5vw,16px);letter-spacing:.28em;text-transform:uppercase;color:#cfd3e6;padding:0 10px}
 .tcard{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:0 7vw;font-family:'Arial Black',Impact,sans-serif;text-transform:uppercase;z-index:5;opacity:0}
 .tcard small{display:block;font-family:Georgia,serif;letter-spacing:.5em;font-size:clamp(11px,1.5vw,15px);color:#c9c4b0;font-weight:400;margin-bottom:10px}
@@ -184,7 +185,7 @@ h2.h{font-size:clamp(28px,5vw,52px);margin:8px 0 14px;letter-spacing:-.02em;line
 <script>
 /* ===== EDIT THESE ===== */
 const CONFIG={
-  photo:'',      // e.g. 'assets/me.png' (transparent PNG cut-out)
+  photo:'assets/me.webp',
   email:'rohithvandadi07@gmail.com',
   trishulxEmail:'trishulx2026@gmail.com',
   linkedin:'https://www.linkedin.com/in/rohithv0507/',
@@ -208,7 +209,7 @@ let mx=0,my=0;
   if(CONFIG.linkedin)add('LinkedIn',CONFIG.linkedin,false,true);
   if(CONFIG.email)$('cmail').innerHTML='<a href="mailto:'+CONFIG.email+'" style="color:#cfd3e6">'+CONFIG.email+'</a><br><br>';
   if(CONFIG.trishulxEmail||CONFIG.email){const te=CONFIG.trishulxEmail||CONFIG.email;$('txA').href='mailto:'+te+'?subject=TrishulX';$('txA').onclick=e=>{e.preventDefault();openContact('TrishulX',te)}}
-  if(CONFIG.photo)$('hsil').innerHTML='<img src="'+CONFIG.photo+'" alt="Rohith V" style="object-fit:contain;object-position:bottom">';
+  if(CONFIG.photo)$('hsil').innerHTML='<img src="'+CONFIG.photo+'" alt="Rohith V" width="843" height="1300" fetchpriority="high">';
 })();
 
 /* grain */
