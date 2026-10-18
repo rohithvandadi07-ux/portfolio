@@ -23,17 +23,28 @@ button{font-family:inherit}
 .sec{position:relative}
 .stk{position:sticky;top:0;height:100vh;overflow:hidden}
 .abs{position:absolute;inset:0}
-.grain{position:absolute;inset:0;width:100%;height:100%;opacity:.13;mix-blend-mode:screen;pointer-events:none;z-index:8}
-.vig{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.7));z-index:7;pointer-events:none}
+.grain{position:absolute;inset:0;width:100%;height:100%;opacity:.08;mix-blend-mode:screen;pointer-events:none;z-index:8}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 62%,rgba(0,0,0,.45));z-index:7;pointer-events:none}
 .lb{position:absolute;left:0;right:0;background:#000;z-index:9;height:0}.lb.t{top:0}.lb.b{bottom:0}
 .hint{position:absolute;bottom:2.2%;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.3em;color:#c9c4b0;z-index:10;text-transform:uppercase;transition:opacity .3s}
 /* hero */
-#hero{position:absolute;inset:0;z-index:2;background:radial-gradient(circle at 50% 60%,#1b1840,#06070b 70%)}
-#hname{position:absolute;left:0;right:0;top:9%;text-align:center;font-weight:900;font-size:clamp(54px,17vw,300px);letter-spacing:-.04em;line-height:.9;white-space:nowrap;background:linear-gradient(180deg,#fff 20%,#6d5df0);-webkit-background-clip:text;background-clip:text;color:transparent;will-change:transform}
-#hsil{position:absolute;left:0;right:0;bottom:-1%;height:76%;display:flex;justify-content:center;will-change:transform;filter:drop-shadow(0 0 26px rgba(124,92,255,.45))}
+#hero{position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse at 50% 110%,#17143a 0%,#08090f 60%)}
+#hspot{position:absolute;left:50%;bottom:-18%;width:min(120vh,120vw);height:min(120vh,120vw);transform:translateX(-50%);background:radial-gradient(circle,rgba(124,92,255,.22),transparent 60%);pointer-events:none}
+#hname{position:absolute;left:0;right:0;top:11%;text-align:center;font-weight:800;font-size:clamp(46px,14vw,240px);letter-spacing:-.045em;line-height:.9;white-space:nowrap;background:linear-gradient(180deg,#f4f5fb 25%,rgba(244,245,251,.32));-webkit-background-clip:text;background-clip:text;color:transparent;will-change:transform}
+#hsil{position:absolute;left:0;right:0;bottom:-1%;height:74%;display:flex;justify-content:center;will-change:transform}
 #hsil svg,#hsil img{height:100%;width:auto;max-width:100%}
-#hsil img{-webkit-mask-image:linear-gradient(to bottom,#000 78%,transparent 99%),linear-gradient(to right,transparent 0,#000 14%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,#000 78%,transparent 99%),linear-gradient(to right,transparent 0,#000 14%);mask-composite:intersect}
-#hsub{position:absolute;left:0;right:0;bottom:7%;text-align:center;z-index:3;font-size:clamp(11px,1.5vw,16px);letter-spacing:.28em;text-transform:uppercase;color:#cfd3e6;padding:0 10px}
+#hsil img{-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent 99%),linear-gradient(to right,transparent 0,#000 14%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,#000 80%,transparent 99%),linear-gradient(to right,transparent 0,#000 14%);mask-composite:intersect}
+#hleft{position:absolute;left:5vw;bottom:10%;z-index:3;max-width:min(330px,27vw)}
+#hleft .ey{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--teal)}
+#hleft h1{font-size:clamp(17px,1.9vw,27px);line-height:1.25;margin:10px 0 18px;font-weight:650;letter-spacing:-.01em;color:#eceef6}
+.hbtn{display:flex;gap:10px;flex-wrap:wrap}
+#hright{position:absolute;right:5vw;bottom:10%;z-index:3}
+#hright a{display:inline-flex;gap:9px;align-items:center;padding:9px 15px;border:1px solid #2c3254;border-radius:99px;font-size:12px;letter-spacing:.05em;color:#cfd3e6;background:rgba(10,12,20,.55)}
+#hright a:hover{border-color:#5a4fb0}
+#hright .dot{width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 9px var(--amber)}
+#hscroll{position:absolute;left:50%;bottom:2.5%;width:1px;height:34px;background:linear-gradient(#fff,transparent);z-index:3;animation:sc 1.8s ease-in-out infinite}
+@keyframes sc{0%,100%{opacity:.25}50%{opacity:.9}}
+@media(max-width:900px){#hname{top:12%;font-size:15.5vw}#hsil{height:58%;bottom:13%}#hleft{left:0;right:0;max-width:none;text-align:center;bottom:6%;padding:0 22px}#hleft h1{font-size:17px;margin:8px 0 14px}.hbtn{justify-content:center}#hright{display:none}#hscroll{display:none}}
 .tcard{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:0 7vw;font-family:'Arial Black',Impact,sans-serif;text-transform:uppercase;z-index:5;opacity:0}
 .tcard small{display:block;font-family:Georgia,serif;letter-spacing:.5em;font-size:clamp(11px,1.5vw,15px);color:#c9c4b0;font-weight:400;margin-bottom:10px}
 .tcard h2{margin:0;font-size:clamp(28px,6.4vw,84px);letter-spacing:.03em;line-height:1.04}
@@ -119,12 +130,14 @@ h2.h{font-size:clamp(28px,5vw,52px);margin:8px 0 14px;letter-spacing:-.02em;line
 <section class="sec" id="A" style="height:560vh"><div class="stk">
   <canvas class="grain"></canvas><div class="vig"></div><div class="lb t" id="lbA1"></div><div class="lb b" id="lbA2"></div>
   <div id="hero">
+    <div id="hspot"></div>
     <div id="hname">ROHITH V</div>
-    <div id="hsil"><svg viewBox="0 0 400 520" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2d3250"/><stop offset="1" stop-color="#0a0c14"/></linearGradient></defs><path d="M200 40C150 40 120 80 120 130C120 175 145 215 175 230C170 250 165 262 120 280C50 305 20 360 10 520H390C380 360 350 305 280 280C235 262 230 250 225 230C255 215 280 175 280 130C280 80 250 40 200 40Z" fill="url(#sg)" stroke="#8f7bff" stroke-opacity=".7" stroke-width="3"/></svg></div>
-    <div id="hsub">AI &middot; Cybersecurity &middot; Full-stack &middot; Building TrishulX</div>
+    <div id="hsil"><svg viewBox="0 0 400 520" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2d3250"/><stop offset="1" stop-color="#0a0c14"/></linearGradient></defs><path d="M200 40C150 40 120 80 120 130C120 175 145 215 175 230C170 250 165 262 120 280C50 305 20 360 10 520H390C380 360 350 305 280 280C235 262 230 250 225 230C255 215 280 175 280 130C280 80 250 40 200 40Z" fill="url(#sg)"/></svg></div>
+    <div id="hleft"><div class="ey">B.Tech &middot; 3rd year</div><h1>AI and cybersecurity engineer who builds the whole stack.</h1><div class="hbtn"><a class="btn p" href="#projects">See my work</a><a class="btn" href="#contact">Contact</a></div></div>
+    <div id="hright"><a href="#trishulx"><i class="dot"></i>Now building TrishulX</a></div>
+    <div id="hscroll"></div>
   </div>
   <div id="tcA"></div>
-  <div class="hint" id="hintA">Scroll</div>
 </div></section>
 
 <section class="sec" id="devs" style="height:1000vh"><div class="stk">
@@ -223,10 +236,9 @@ const hero=$('hero'),hname=$('hname'),hsil=$('hsil');let pA=0;
 function updA(){
   const p=pA=prog($('A'));const h=seg(p,.05,.15);
   hero.style.opacity=1-h;hero.style.visibility=h>=1?'hidden':'visible';hero.style.transform='scale('+(1+h*.45)+')';
-  hname.style.transform='translate('+(-mx*20)+'px,'+(-my*10)+'px)';hsil.style.transform='translate('+(mx*16)+'px,'+(my*8+h*40)+'px)';
+  hname.style.transform='translate('+(-mx*12)+'px,'+(-my*6)+'px)';hsil.style.transform='translate('+(mx*9)+'px,'+(my*5+h*40)+'px)';
   const lb=13*seg(p,.08,.17)+'%';$('lbA1').style.height=lb;$('lbA2').style.height=lb;
   elsA.forEach((e,i)=>{const s=.17+i*.15,t=seg(p,s,s+.15);e.style.opacity=Math.min(1,Math.sin(Math.PI*t)*2.2);e.style.transform='scale('+(1+t*.1)+')'});
-  $('hintA').style.opacity=p<.03?1:0;
 }
 addEventListener('mousemove',e=>{mx=e.clientX/innerWidth*2-1;my=e.clientY/innerHeight*2-1;if(pA<.2)updA()});
 
